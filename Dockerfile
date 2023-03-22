@@ -15,10 +15,7 @@ COPY package.json ./
 
 
 #Run npm install command
-RUN apt -y update \
-    && apt -y install curl \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-    && apt -y install nodejs
+RUN npm install
 
 
 #Copy the app
