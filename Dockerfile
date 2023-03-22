@@ -15,7 +15,11 @@ COPY package.json ./
 
 
 #Run npm install command
-RUN npm install
+RUN sudo apt update
+RUN sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN sudo apt -y install nodejs
+RUN sudo apt -y install npm
 
 
 #Copy the app
